@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulation</title>
+</head>
+
+<body style="background-color: #414141; ">
+    <div id="container">
+        <div id="heading-1">
+            Welcome to CodeVerse !
+        </div>
+        <div class="firstArticle">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, doloremque omnis eaque cumque voluptate,
+            possimus nemo est assumenda excepturi, debitis facilis? Ab, necessitatibus corrupti soluta exercitationem
+            consequatur libero et consectetur.
+        </div>
+
+        <div class="list">
+            <ul id="anime-list">
+                <li>Your name</li>
+                <li>Your Lie in April</li>
+                <li>Your someone</li>
+            </ul>
+        </div>
+
+        <!--  <div class="image-container">
+            <img id="image-egypt"
+                src="https://images.pexels.com/photos/10928747/pexels-photo-10928747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                alt="Egypt Image">
+        </div> -->
+
+        <button id="button1">
+            Change Text
+        </button>
+
+    </div>
+
+    <!-- <script>
+        /* Task 1 => Changing TextContent */
+
+        let heading1 = document.getElementById("heading-1")
+        heading1.textContent = "Welcome to Javascript Verse"
+        // heading1.remove() // method to remove an element 
+
+        let firstArticle = document.querySelector(".firstArticle")
+        firstArticle.style.backgroundColor = "darkgreen";
+
+        let body = document.getElementsByTagName("body")[0]
+
+        let newdiv = document.createElement("div")
+        newdiv.textContent = "Hellow Moshi Moshi"
+        body.appendChild(newdiv)
+
+        let animeList = document.getElementById("anime-list")
+        console.log(animeList.lastChild);
+
+        let newLi = document.createElement("li")
+        newLi.textContent = "I want to eat your pancreas"
+
+        animeList.appendChild(newLi)
+
+
+    </script> -->
+
+    <!-- <script>
+
+        let image = document.querySelector("#image-egypt")
+        image.addEventListener("mouseover", () => {
+            image.style.cursor = "pointer"
+
+            let link1 = "https://images.pexels.com/photos/18207346/pexels-photo-18207346/free-photo-of-view-of-a-mitsubishi-pajero-driving-on-a-dirt-road.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+
+
+            let link2 = "https://images.pexels.com/photos/10928747/pexels-photo-10928747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+
+            if (image.src == link1) {
+                image.src = link2;
+            } else {
+                image.src = link1
+            }
+            
+        })
+    </script> -->
+
+    <!--  <script>
+        let mainBody = document.getElementsByTagName("body")[0]
+        mainBody.style.removeProperty("background-color")
+
+    </script> -->
+
+    <script>
+        // Event Listener 
+        let button = document.querySelector("#button1");
+        let body = document.querySelector(".firstArticle")
+        let text = ` Hello ! This is me Dhanjit Nath , 17 years old programmer and soon will do a lot a programming stuffs . Currently completing this javascript course of 30 days challenge and then also continuing the reactJs along with this !!! Hope You Enjoy  `
+        button.addEventListener("click", () => {
+            body.textContent = text
+        })
+
+        button.addEventListener("mouseover" , (event)=>{
+            event.target.style.border = "2px solid blue"
+            setTimeout(()=>{
+                event.target.style.border = ""
+            },1000)
+        })
+
+
+    </script>
+</body>
+
+</html>
