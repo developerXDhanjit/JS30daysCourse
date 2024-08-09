@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10 : Event Handling</title>
+
+</head>
+
+<body>
+
+    <!-- <div>
+        <h3>Activity 1 : Basic Event Handling</h3>
+        <h4>Change para on click </h4>
+        <p id="changeThisPara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quod a accusantium
+            numquam illo distinctio quia sint adipisci illum sunt totam nisi vero delectus?</p>
+        <button id="changePara">
+            Change Paragraph
+        </button>
+
+
+        <h4>Image visibility change of double Click </h4>
+        <div id="image-container" style="min-height: 20vh; width: auto; border: 2px solid black;">
+            <img style="background-size: cover;" id="image"
+                src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Coding Image">
+        </div>
+
+    </div> -->
+
+    <!-- <div>
+        <h3>Mouse Event </h3>
+        <div>
+            <h4>Mouse Over Event & Mouse Out Event </h4>
+            <button id="mouseoverBtn" style="padding: 10px; border-radius: 20px; background-color: pink; color: black; ">
+                Hover Over Me 
+            </button>
+        </div>
+       
+    </div> -->
+
+    <!-- <div>
+        <h4>Keyboard Events</h4>
+        <input type="text" name="inputField" placeholder="Type Here" id="someInputField">
+        <p id="display-text"></p>
+    </div> -->
+
+    <!-- <div id="form">
+        <form action="#" id="nameForm">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Type here">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Type here">
+            <br>
+            <input type="submit" value="submit ">
+        </form>
+    </div> -->
+
+    <!-- <ul id="cartoon-name" style="cursor: pointer;">
+        <li>Pokemon</li>
+        <li>Doraemon</li>
+        <li>Shin-chan</li>
+        <li>Ninja Hattori</li>
+    </ul>
+
+    <button id="add-new"> Add New Item </button>
+    <input type="text" id="newItem"> -->
+
+
+    <!-- <script>
+        /* Basic Event Handling 1  */
+        //Task 1 
+        let changeParaButton = document.querySelector("#changePara")
+        let paraToChange = document.querySelector("#changeThisPara")
+
+        changeParaButton.addEventListener("click", () => {
+            let content = ` Psychology is the scientific study of mind and behavior.[1][2] Its subject matter includes the behavior of humans and nonhumans, both conscious and unconscious phenomena, and mental processes such as thoughts, feelings, and motives. Psychology is an academic discipline of immense scope, crossing the boundaries between the natural and social sciences. Biological psychologists seek an understanding of the emergent properties of brains, linking the discipline to neuroscience. As social scientists, psychologists aim to understand the behavior of individuals and groups.[3][4] `
+
+            paraToChange.textContent = content
+        })
+
+
+        //Task 2 
+        let imageContainer = document.querySelector("#image-container")
+        let image = document.querySelector("#image")
+        let flag = 1;
+        imageContainer.addEventListener("dblclick", () => {
+
+            if (flag == 1) {
+                image.style.visibility = "hidden"
+                flag = 2
+            } else if (flag == 2) {
+                image.style.visibility = "visible"
+                flag = 1
+            }
+
+            // setTimeout(()=>{
+            //     image.style.visibility = "visible"
+            // }, 3000)
+        })
+    </script> -->
+
+    <!-- <script>
+        /* Activity 2 : Mouse Events  */
+        // Mouse Over
+
+        let mouseoverBtn = document.querySelector("#mouseoverBtn")
+        mouseoverBtn.addEventListener("mouseover" , (event)=>{
+            event.target.style.backgroundColor = "indigo"
+            event.target.style.color = "white"  
+            event.target.style.cursor = "pointer"  
+
+        })
+        mouseoverBtn.addEventListener("mouseout" , (event)=>{
+            event.target.style.backgroundColor = "pink"
+            event.target.style.color = "black"       
+        })
+    </script> -->
+
+    <!-- <script>
+        /* Keyboard Events */
+
+        // KeyUp Event
+
+        let inputField = document.querySelector("#someInputField")
+        let displayText = document.querySelector("#display-text")
+
+        inputField.addEventListener("keydown", (event) => {
+            console.log(event.key)
+        })
+
+        inputField.addEventListener("keyup", (event) => {
+            displayText.textContent += `${event.key}`
+        })
+    </script> -->
+
+    <!-- <script>
+
+        let form = document.getElementById("nameForm");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let firstName = document.getElementById("firstName")
+            let lastName = document.getElementById("lastName")
+            console.log(firstName.value, lastName.value);
+        })
+    </script> -->
+
+    <!-- <script>
+        let list = document.getElementById("cartoon-name")
+        list.addEventListener("click" , (event)=>{
+            console.log(event.target.textContent);
+        })
+    </script> -->
+
+    <!-- <script>
+        let list = document.getElementById("cartoon-name")
+        let addNewBtn = document.getElementById("add-new")
+        addNewBtn.addEventListener("click", (event) => {
+            let newItem = document.getElementById("newItem")
+            let li = document.createElement("li")
+            li.textContent = newItem.value
+            list.appendChild(li)
+            newItem.value = ""
+
+        })
+
+        list.addEventListener("click", (event) => {
+            if (event.target && event.target.tagname == "LI") {
+
+            }
+            console.log(event.target.textContent);
+        })
+    </script> -->
+</body>
+
+</html>
